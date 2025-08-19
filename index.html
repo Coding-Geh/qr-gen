@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CodingGeh — QR Generator</title>
+    <meta name="description" content="Generate QR codes instantly in your browser. Download PNG or SVG." />
+    <meta name="robots" content="index,follow" />
+    <meta name="author" content="CodingGeh" />
+    <meta name="theme-color" content="#6c5ce7" />
+    <link rel="canonical" href="https://coding-geh.github.io/qr-gen/" />
+    <link rel="alternate" hreflang="en" href="https://coding-geh.github.io/qr-gen/?lang=en" />
+    <link rel="alternate" hreflang="id" href="https://coding-geh.github.io/qr-gen/?lang=id" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CodingGeh — QR Generator" />
+    <meta property="og:description" content="Generate QR codes instantly. Download PNG or SVG." />
+    <meta property="og:url" content="https://coding-geh.github.io/qr-gen/" />
+    <meta property="og:image" content="og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CodingGeh — QR Generator" />
+    <meta name="twitter:description" content="Generate QR codes instantly." />
+    <meta name="twitter:image" content="og-image.svg" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='46' fill='%23433cff'/><text x='50' y='58' font-size='42' text-anchor='middle' fill='%23fff' font-family='Arial'>C</text></svg>">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <a class="brand" href="#">CodingGeh</a>
+        <div class="actions">
+          <button id="themeToggle" class="icon-btn" aria-label="Toggle theme">🌙</button>
+          <button id="langToggle" class="lang-btn" aria-label="Switch language">EN</button>
+        </div>
+      </header>
+      <section class="tool">
+        <h1 data-i18n="title">QR Code Generator</h1>
+        <p class="lead" data-i18n="subtitle">Type text or URL, customize size, then download.</p>
+        <div class="controls">
+          <input id="text" type="text" placeholder="https://example.com" />
+          <label><span data-i18n="size">Size</span> <input id="size" type="range" min="128" max="512" step="32" value="256"/></label>
+          <div class="row">
+            <button id="gen" class="btn" data-i18n="generate">Generate</button>
+            <button id="dlPng" class="btn" data-i18n="png">Download PNG</button>
+            <button id="dlSvg" class="btn" data-i18n="svg">Download SVG</button>
+          </div>
+        </div>
+        <div class="preview">
+          <canvas id="canvas" width="256" height="256" aria-label="QR preview"></canvas>
+          <div id="svgHolder" hidden></div>
+        </div>
+      </section>
+      <footer class="footer">© <span id="year"></span> <span data-i18n="brand">CodingGeh</span></footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+  </html>
+
+
